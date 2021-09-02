@@ -6,7 +6,7 @@
 #    By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by mmondell          #+#    #+#              #
-#    Updated: 2021/08/31 14:58:32 by mmondell         ###   ########.fr        #
+#    Updated: 2021/09/02 14:55:40 by mmondell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ SRCS_FILES		=
 
 ## ----- .C TO .O CONVERT ----- ##
 OBJ_FILES		= $(SRCS_FILES:.c=.o)
-B_OBJ_FILES		= $(B_SRCS_FILES:.c=.o)
+#*B_OBJ_FILES		= $(B_SRCS_FILES:.c=.o)
 
 ## ----- ADDPREFIX TO FILES ----- ##
 # MAIN PROGRAMM #
