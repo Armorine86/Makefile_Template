@@ -68,9 +68,9 @@ $(OBJS_PATH):
 
 
 # linux :	$(OBJS_PATH) $(OBJS)
-# 	@echo "\033[95mCompiling WebServ \033[0m"
+# 	@echo "\033[95mCompiling Program \033[0m"
 # 	$(CC) $(OBJS) -o $(NAME)
-# 	@echo "\\n\033[32;1mWebServ IS READY \033[0m \\n"
+# 	@echo "\\n\033[32;1mProgram IS READY \033[0m \\n"
 # 	@echo $(USAGE)
 
 # linux_debug: CFLAGS += -g -fstandalone-debug -DDEBUG=1 -fno-limit-debug-info
