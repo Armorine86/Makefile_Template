@@ -29,10 +29,10 @@ FOLDER_3_PATH		=	$(SRCS_PATH)#folder 3
 FOLDER_4_PATH		=	$(SRCS_PATH)#folder 4
 
 SRCS 				=	$(addprefix $(SRCS_PATH), $(SRCS_FILES))
-UTILS_SRCS			= 	$(addprefix $(FOLDER_1_PATH), $(FOLDER_1_FILES))
-PARSER_SRCS			= 	$(addprefix $(FOLDER_2_PATH), $(FOLDER_2_FILES))
-SERVER_SRCS			=	$(addprefix $(FOLDER_3_PATH), $(FOLDER_3_FILES))
-CGI_SRCS			=	$(addprefix $(FOLDER_4_PATH), $(FOLDER_4_FILES))
+FOLDER_1_SRCS		= 	$(addprefix $(FOLDER_1_PATH), $(FOLDER_1_FILES))
+FOLDER_2_SRCS		= 	$(addprefix $(FOLDER_2_PATH), $(FOLDER_2_FILES))
+FOLDER_3_SRCS		=	$(addprefix $(FOLDER_3_PATH), $(FOLDER_3_FILES))
+FOLDER_4_SRCS		=	$(addprefix $(FOLDER_4_PATH), $(FOLDER_4_FILES))
 
 OBJS_FILES			= 	$(SRCS_FILES:.cpp=.o) $(FOLDER_1_FILES:.cpp=.o) $(FOLDER_3_FILES:.cpp=.o)\
 						$(FOLDER_2_FILES:.cpp=.o) $(FOLDER_4_FILES:.cpp=.o)
@@ -67,14 +67,16 @@ $(OBJS_PATH):
 	@printf "\033[32;1m\nCompiling with: \033[38;5;208m$(CFLAGS)\033[0m\\n\\n"
 
 
-linux :	$(OBJS_PATH) $(OBJS)
-	@echo "\033[95mCompiling WebServ \033[0m"
-	$(CC) $(OBJS) -o $(NAME)
-	@echo "\\n\033[32;1mWebServ IS READY \033[0m \\n"
-	@echo $(USAGE)
+# linux :	$(OBJS_PATH) $(OBJS)
+# 	@echo "\033[95mCompiling WebServ \033[0m"
+# 	$(CC) $(OBJS) -o $(NAME)
+# 	@echo "\\n\033[32;1mWebServ IS READY \033[0m \\n"
+# 	@echo $(USAGE)
 
-linux debug: CFLAGS += -g
-linux debug: linux
+# linux_debug: CFLAGS += -g -fstandalone-debug -DDEBUG=1 -fno-limit-debug-info
+# linux_debug: linux
+
+# linux_redebug : fclean linux_debug
 
 
 debug:	CFLAGS += -g -fstandalone-debug -DDEBUG=1 -fno-limit-debug-info
