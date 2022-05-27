@@ -6,7 +6,7 @@
 #    By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by mmondell          #+#    #+#              #
-#    Updated: 2021/09/02 14:55:40 by mmondell         ###   ########.fr        #
+#    Updated: 2022/05/27 09:30:20 by mmondell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ B_NAME			=
 
 ## ----- CHOOSE COMPILER AND FLAGS ----- ##
 CC				= gcc
-CFLAGS			= -Wall -Wextra -Werror -g
+CFLAGS			= -Wall -Wextra -Werror
 
 ## ----- PATH TO FOLDERS ----- ##
 SRCS_DIR		= srcs/
@@ -80,6 +80,14 @@ $(OBJ_DIR)%.o:%.c
 $(NAME): $(OBJS)
 	$(LIBFT)
 	$(CC) $(OBJS) -L$(LIBFT_DIR) -lft -o $(NAME)
+
+debug: CFLAGS += -g -fstandalone-debug -fno-limit-debug-info
+debug: all
+
+redebug : fclean debug
+
+release: CFLAGS += -O2
+release: all
 
 obj:
 	@mkdir -p $(OBJ_DIR)

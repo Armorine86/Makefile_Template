@@ -1,2 +1,2 @@
 # Makefile_Template
-Generic Makefile template for your projects
+Generic Makefile simple template for your 42school projects

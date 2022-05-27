@@ -79,11 +79,14 @@ $(OBJS_PATH):
 # linux_redebug : fclean linux_debug
 
 
-debug:	CFLAGS += -g -fstandalone-debug -DDEBUG=1 -fno-limit-debug-info
+debug:	CFLAGS += -g -fstandalone-debug -fno-limit-debug-info
 debug:	$(NAME)
 	@printf "\033[32;1m\nCompiling with: \033[38;5;208m$(CFLAGS)\033[0m \\n"
 
 redebug : fclean debug
+
+release: CFLAGS += -O2
+release: all
 
 clean:
 	@$(RM) $(OBJS_FILES) $(OBJS_PATH) 
