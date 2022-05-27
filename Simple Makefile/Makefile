@@ -6,7 +6,7 @@
 #    By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by mmondell          #+#    #+#              #
-#    Updated: 2022/05/27 09:30:20 by mmondell         ###   ########.fr        #
+#    Updated: 2022/05/27 09:34:31 by mmondell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,6 +86,8 @@ debug: all
 
 redebug : fclean debug
 
+# Optimization flag for a small performance boost to your programm
+# If you have errors compiling with this flag reduce to -O1 or just compile using make
 release: CFLAGS += -O2
 release: all
 
