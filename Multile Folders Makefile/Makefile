@@ -81,10 +81,11 @@ $(OBJS_PATH):
 
 debug:	CFLAGS += -g -fstandalone-debug -fno-limit-debug-info
 debug:	$(NAME)
-	@printf "\033[32;1m\nCompiling with: \033[38;5;208m$(CFLAGS)\033[0m \\n"
 
 redebug : fclean debug
 
+# Optimization flag for a small performance boost to your programm
+# If you have errors compiling with this flag reduce to -O1 or just compile using make
 release: CFLAGS += -O2
 release: all
 
